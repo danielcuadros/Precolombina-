@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:precolombina/bloc/splash_screen_bloc.dart';
 
-class FirstPage extends StatelessWidget {
+class FirstPage extends StatefulWidget {
   const FirstPage({Key key}) : super(key: key);
   static const Duration zero = const Duration(seconds: 5);
   static final String namePage = "first";
+
+  @override
+  _FirstPageState createState() => _FirstPageState();
+}
+
+class _FirstPageState extends State<FirstPage> {
+  @override
+  void initState() {
+    super.initState();
+    this._dispatchEvent(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,6 +49,12 @@ class FirstPage extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  void _dispatchEvent(BuildContext context) {
+    BlocProvider.of<SplashScreenBloc>(context).dispatch(
+      NavigateToHomeScreenEvent(),
     );
   }
 }
