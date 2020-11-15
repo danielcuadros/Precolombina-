@@ -13,6 +13,7 @@ class Registrer extends StatelessWidget {
   TextEditingController tecUser = TextEditingController();
   TextEditingController tecPassword = TextEditingController();
   TextEditingController tecValidate = TextEditingController();
+  TextEditingController tecNumber = TextEditingController();
   var myContext;
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,8 @@ class Registrer extends StatelessWidget {
               size: 40.0,
             ),
             onPressed: () => Navigator.of(context).pop(),
-          )),
+          ),
+        ),
       body: SingleChildScrollView(
         child: Container(
           child: Center(
@@ -229,7 +231,7 @@ class Registrer extends StatelessWidget {
                 ),
               ),
               obscureText: true,
-              controller: tecValidate,
+              controller: tecNumber,
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Numero celular',

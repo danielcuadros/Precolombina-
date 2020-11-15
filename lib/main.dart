@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:precolombina/pages/add_product.dart';
 import 'package:precolombina/pages/loginPage.dart';
 import 'package:precolombina/pages/register_page.dart';
 import 'package:precolombina/pages/splash_screen.dart';
@@ -19,6 +20,8 @@ class MyApp extends StatelessWidget {
         Registrer.namePage: (BuildContext) => Registrer(),
         // ignore: non_constant_identifier_names
         Store.namePage: (BuildContext) => Store(),
+        // ignore: non_constant_identifier_names
+        AddProduct.namePage: (BuildContext) => AddProduct(),
       },
     );
   }
