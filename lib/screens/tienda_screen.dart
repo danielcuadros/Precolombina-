@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:precolombina/models/artwork.dart';
+import 'package:precolombina/pages/obras_artisticas.dart';
+import 'package:precolombina/pages/obras_literarias.dart';
 import 'package:precolombina/services/precolombina_service_firebase.dart';
 import 'package:precolombina/widgets/producto_Item.dart';
 import 'package:precolombina/widgets/producto_literarias.dart';
@@ -15,8 +17,10 @@ class Tienda extends StatefulWidget {
 class _TiendaState extends State<Tienda> {
   int seleccionado = 0;
   List<Artwork> artworks = [];
+  var myContext;
   @override
   Widget build(BuildContext context) {
+    myContext = context;
     return Container(
       child: SingleChildScrollView(
         child: Center(
@@ -36,9 +40,13 @@ class _TiendaState extends State<Tienda> {
                       _obrasliterarias(),
                       SizedBox(height: 10.0),
                       _cargarliterarias(),
+                      SizedBox(height: 2.0),
+                      _ver1(),
                       _obrasartisticas(),
                       SizedBox(height: 10.0),
                       _cargarartisticas(),
+                      _ver2(),
+                      SizedBox(height: 2.0),
                     ],
                   );
                 } else {}
@@ -177,5 +185,43 @@ class _TiendaState extends State<Tienda> {
       }
     }
     return elementos;
+  }
+
+  Widget _ver1() {
+    return Container(
+      alignment: Alignment.centerRight,
+      width: 380.0,
+      child: FlatButton(
+        onPressed: () {
+          Navigator.pushNamed(myContext, ObrasLiterarias.namePage);
+        },
+        child: Text(
+          "Ver mas",
+          style: GoogleFonts.roboto(
+            textStyle: TextStyle(
+                color: Color.fromRGBO(6, 123, 194, 100), fontSize: 18.0),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _ver2() {
+    return Container(
+      alignment: Alignment.centerRight,
+      width: 380.0,
+      child: FlatButton(
+        onPressed: () {
+          Navigator.pushNamed(myContext, ObrasArtisticas.namePage);
+        },
+        child: Text(
+          "Ver mas",
+          style: GoogleFonts.roboto(
+            textStyle: TextStyle(
+                color: Color.fromRGBO(6, 123, 194, 100), fontSize: 18.0),
+          ),
+        ),
+      ),
+    );
   }
 }

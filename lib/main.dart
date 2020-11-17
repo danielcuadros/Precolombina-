@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:precolombina/pages/add_product.dart';
 import 'package:precolombina/pages/loginPage.dart';
+import 'package:precolombina/pages/obras_artisticas.dart';
+import 'package:precolombina/pages/obras_literarias.dart';
 import 'package:precolombina/pages/register_page.dart';
 import 'package:precolombina/pages/splash_screen.dart';
 import 'package:precolombina/pages/store.dart';
@@ -22,6 +24,10 @@ class MyApp extends StatelessWidget {
         Store.namePage: (BuildContext) => Store(),
         // ignore: non_constant_identifier_names
         AddProduct.namePage: (BuildContext) => AddProduct(),
+        // ignore: non_constant_identifier_names
+        ObrasLiterarias.namePage: (BuildContext) => ObrasLiterarias(),
+        // ignore: non_constant_identifier_names
+        ObrasArtisticas.namePage: (BuildContext) => ObrasArtisticas(),
       },
     );
   }
