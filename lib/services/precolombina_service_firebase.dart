@@ -27,4 +27,18 @@ class PrecolombinaService {
     });
     return lista;
   }
+
+  static Future<void> sendData(String name, String image, String type,
+      String description, int price, int quantity) async {
+    await http.post("https://precolombina-a1628.firebaseio.com/artworks.json",
+        body: json.encode({
+          'name': name,
+          'image': image,
+          'type': type,
+          'description': description,
+          'price': price,
+          'quantity': quantity,
+          'product': true,
+        }));
+  }
 }

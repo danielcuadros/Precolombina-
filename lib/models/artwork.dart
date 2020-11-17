@@ -19,7 +19,7 @@ class Artwork {
       @required int price,
       @required int quantity,
       @required String description}) {
-    this.id = "";
+    this.id = id;
     this.product = product;
     this.name = name;
     this.tipe = tipe;
@@ -69,6 +69,7 @@ class Artwork {
 
   @override
   String toString() {
+    // ignore: todo
     // TODO: implement toString
     return super.toString();
   }

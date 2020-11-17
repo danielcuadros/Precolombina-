@@ -17,8 +17,6 @@ class _TiendaState extends State<Tienda> {
   List<Artwork> artworks = [];
   @override
   Widget build(BuildContext context) {
-    Map datos = ModalRoute.of(context).settings.arguments;
-    int numero = datos['dato'];
     return Container(
       child: SingleChildScrollView(
         child: Center(
